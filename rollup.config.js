@@ -33,7 +33,7 @@ const minifiedPlugins = [
     ]
   }),
   uglify({
-    compress: { warnings: false, ie8: true },
+    compress: { ie8: true },
     mangle: { ie8: true },
     output: { ie8: true }
   })

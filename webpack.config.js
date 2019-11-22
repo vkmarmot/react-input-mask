@@ -10,7 +10,15 @@ module.exports = {
   performance: {
     hints: false
   },
-  entry: './index.js',
+  entry: process.env.NODE_ENV === "development" ? {
+    some: [
+      "core-js/modules/es.array.iterator",
+      "core-js/modules/es.set",
+      "core-js/modules/es.map",
+      "raf/polyfill",
+      './index.js',
+    ]
+  } : './index.js',
   output: {
     filename: '[name].js'
   },

@@ -15,8 +15,8 @@ export default function processChange(maskOptions, value, selection, previousVal
   let removedLength = 0;
   let cursorPosition = Math.min(previousSelection.start, selection.start);
 
-  if (selection.end > previousSelection.start) {
-    enteredString = newValue.slice(previousSelection.start, selection.end);
+  if (selection.end >= previousSelection.start) {
+    enteredString = newValue.slice(previousSelection.start, previousSelection.start === selection.end ? selection.end + 1 : selection.end);
     formattedEnteredStringLength = getInsertStringLength(maskOptions, previousValue, enteredString, cursorPosition);
     if (!formattedEnteredStringLength) {
       removedLength = 0;

@@ -1,8 +1,8 @@
 {
-  "name": "react-input-mask",
+  "name": "@tmc/react-input-mask",
   "description": "Masked input component for React",
-  "version": "2.0.4",
-  "homepage": "https://github.com/sanniassin/react-input-mask",
+  "version": "2.0.5",
+  "homepage": "https://github.com/vkmarmot/react-input-mask",
   "license": "MIT",
   "author": "Nikita Lobachev <sanniassin@gmail.com>",
   "keywords": [
@@ -57,7 +57,9 @@
     "rollup-plugin-size-snapshot": "^0.6.1",
     "rollup-plugin-uglify": "^5.0.2",
     "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.3"
+    "webpack-dev-server": "^2.11.3",
+    "core-js": "^3.4.2",
+    "raf": "^3.4.1"
   },
   "main": "index.js",
   "files": [
@@ -69,7 +71,7 @@
     "build": "cross-env BABEL_ENV=rollup rollup -c",
     "dev": "cross-env BABEL_ENV=test NODE_ENV=development webpack-dev-server",
     "dev-ie8": "cross-env BABEL_ENV=test NODE_ENV=development webpack-dev-server --inline=false",
-    "prepare": "npm test && npm run clean && npm run build",
+    "prepare": "npm run clean && npm run build",
     "test": "npm run build && npm run test:input && npm run test:server-render && npm run test:build",
     "test:input": "cross-env BABEL_ENV=test karma start",
     "test:server-render": "cross-env BABEL_ENV=test mocha --require @babel/register ./tests/server-render",
